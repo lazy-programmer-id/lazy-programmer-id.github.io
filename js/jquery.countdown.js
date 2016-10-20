@@ -9,7 +9,7 @@
 	var pluginName = 'countdown';
 
 	var Y = 0; // Years
-	var O = 1; // Months
+	var O = 0; // Months
 	var W = 2; // Weeks
 	var D = 3; // Days
 	var H = 4; // Hours
@@ -843,13 +843,13 @@
 			periods[period] = (show[period] ? Math.floor(diff / numSecs) : 0);
 			diff -= periods[period] * numSecs;
 		};
-		extractPeriod(W, 604800);
+		extractPeriod(W, 0);
 		extractPeriod(D, 86400);
 		extractPeriod(H, 3600);
 		extractPeriod(M, 60);
 		extractPeriod(S, 1);
 		if (diff > 0 && !inst._since) { // Round up if left overs
-			var multiplier = [1, 12, 4.3482, 7, 24, 60, 60];
+			var multiplier = [0, 12, 4.3482, 7, 24, 60, 60];
 			var lastShown = S;
 			var max = 1;
 			for (var period = S; period >= Y; period--) {
