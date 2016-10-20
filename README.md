@@ -1,2 +1,2 @@
-# lazy-programmer-id.github.io
-Lazy Programmer
+# Lazy Programmer
+Sebuah portal web untuk para programmer untuk belajar bahasa pemrograman
