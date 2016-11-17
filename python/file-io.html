@@ -81,10 +81,10 @@
                     
                     
                     <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="index.html"><i class="fa fa-home"></i> <span>Hello World</span></a></li>
+                        <li ><a href="index.html"><i class="fa fa-home"></i> <span>Hello World</span></a></li>
                         <li class="parent"><a href="#"><i class="fa fa-suitcase"></i> <span>Logika If-Else</span></a>
                             <ul class="children">
-                                <li><a href="if.html">IF</a></li>
+                                <li ><a href="if.html">IF</a></li>
                                 <li><a href="if-else.html">IF-Else</a></li>
                                 <li><a href="if-else-bertingkat.html">IF-Else Bertingkat</a></li>
                             </ul>
@@ -109,12 +109,11 @@
                                 <li><a href="opperasi-list.html">Operasi List</a></li>
                             </ul>
                         </li>
-						<li class=""><a href="#"><i class="fa fa-file-text"></i> <span>Operasi Aritmatika</span></a></li>
-						<li class="parent"><a href="#"><i class="fa fa-file-text"></i> <span>File IO</span></a>
+						<li ><a href="aritmatika.html"><i class="fa fa-file-text"></i> <span>Operasi Aritmatika</span></a></li>
+						<li class="parent active"><a href="#"><i class="fa fa-file-text"></i> <span>File IO</span></a>
                             <ul class="children">
-                                <li><a href="list.html">File IO Dasar</a></li>
-                                <li><a href="opperasi-list.html">Menulis File</a></li>
-								<li><a href="opperasi-list.html">Membaca File</a></li>
+                                <li class="active"><a href="file-io.html">File IO Dasar</a></li><li><a href="io-write.html">Menulis File</a></li><li><a href="io-read.html">Membaca File</a></li>
+                                
                             </ul>
                         </li>
                         
@@ -125,32 +124,45 @@
                 <div class="mainpanel">
                     <div class="contentpanel">
                         
-                        <h3>Hello World</h3>
+                        <h3>File IO</h3>
                         <br>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h5 class="panel-title">Input</h5>
-                                <p>Tips: </p>
                             </div><!-- panel-heading -->
                             <div class="panel-body nopadding">
                                 <textarea  rows="4" id="code" name="code" >
-print "hello"
+#file io example
+# encoding=utf-8
+import io
+
+f = io.open("text.txt", "wt", encoding="utf-8")
+inputtext = raw_input("Masukan tulisan yang akan ditulis ke file : ")
+f.write(unicode(inputtext))
+f.close()
+
+print
+print "Konten yang berada di text.txt adalah : "
+text = io.open("text.txt", encoding="utf-8").read()
+print(text)
 </textarea>   
                             </div><!-- panel-body -->
                         </div><!-- panel -->
-						
-						<div class="panel panel-default">
+                        
+                        <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h5 class="panel-title">Output</h5>
+                                <p>Tips</p>
                             </div><!-- panel-heading -->
                             <div class="panel-body nopadding">
                                 <textarea  rows="4" id="code22" name="code22" >
-hello
+Masukan tulisan yang akan ditulis ke file : hello world
+
+Konten yang berada di text.txt adalah : 
+hello world
 </textarea>   
                             </div><!-- panel-body -->
                         </div><!-- panel -->
-                        
-                        
         
         
                     
@@ -201,6 +213,7 @@ hello
         indentUnit: 4,
         matchBrackets: true,
 		readOnly : true
+		
       });
             
             CodeMirror.fromTextArea(document.getElementById("code2"), {

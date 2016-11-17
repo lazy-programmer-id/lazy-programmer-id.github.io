@@ -81,40 +81,38 @@
                     
                     
                     <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="index.html"><i class="fa fa-home"></i> <span>Hello World</span></a></li>
+                        <li ><a href="index.html"><i class="fa fa-home"></i> <span>Hello World</span></a></li>
                         <li class="parent"><a href="#"><i class="fa fa-suitcase"></i> <span>Logika If-Else</span></a>
                             <ul class="children">
-                                <li><a href="if.html">IF</a></li>
-                                <li><a href="if-else.html">IF-Else</a></li>
-                                <li><a href="if-else-bertingkat.html">IF-Else Bertingkat</a></li>
+                                <li ><a href="if.html">IF</a></li>
+                                <li ><a href="if-else.html">IF-Else</a></li>
+                                <li ><a href="if-else-bertingkat.html">IF-Else Bertingkat</a></li>
                             </ul>
                         </li>
                         <li class="parent"><a href="#"><i class="fa fa-edit"></i> <span>Perulangan (loop)</span></a>
                             <ul class="children">
-                                <li class=""><a href="for.html">For</a></li>
-                                <li><a href="while.html">While</a></li>
+                                <li ><a href="for.html">For</a></li>
+                                <li ><a href="while.html">While</a></li>
                                 <li><a href="for-each.html">For each</a></li>
-                                <li><a href="loop-bertingkat.html">Perulangan bertingkat</a></li>
+                                <li ><a href="loop-bertingkat.html">Perulangan bertingkat</a></li>
                             </ul>
                         </li>
                         <li class="parent"><a href="#"><i class="fa fa-bars"></i> <span>Array</span></a>
                             <ul class="children">
-                                <li><a href="array.html">Deklarasi Array</a></li>
+                                <li ><a href="array.html">Deklarasi Array</a></li>
                                 <li><a href="operasi-array.html">Operasi Array</a></li>
                             </ul>
                         </li>
-                        <li class="parent"><a href="#"><i class="fa fa-file-text"></i> <span>List</span></a>
+                        <li class="parent active"><a href="#"><i class="fa fa-file-text"></i> <span>List</span></a>
                             <ul class="children">
-                                <li><a href="list.html">Deklarasi List</a></li>
-                                <li><a href="opperasi-list.html">Operasi List</a></li>
+                                <li ><a href="list.html">Deklarasi List</a></li>
+                                <li class="active"><a href="opperasi-list.html">Operasi List</a></li>
                             </ul>
                         </li>
-						<li class=""><a href="#"><i class="fa fa-file-text"></i> <span>Operasi Aritmatika</span></a></li>
+						<li class=""><a href="aritmatika.html"><i class="fa fa-file-text"></i> <span>Operasi Aritmatika</span></a></li>
 						<li class="parent"><a href="#"><i class="fa fa-file-text"></i> <span>File IO</span></a>
                             <ul class="children">
-                                <li><a href="list.html">File IO Dasar</a></li>
-                                <li><a href="opperasi-list.html">Menulis File</a></li>
-								<li><a href="opperasi-list.html">Membaca File</a></li>
+                                <li><a href="file-io.html">File IO Dasar</a></li><li><a href="io-write.html">Menulis File</a></li><li><a href="io-read.html">Membaca File</a></li>
                             </ul>
                         </li>
                         
@@ -125,32 +123,58 @@
                 <div class="mainpanel">
                     <div class="contentpanel">
                         
-                        <h3>Hello World</h3>
+                        <h3>Operasi pada List</h3>
                         <br>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h5 class="panel-title">Input</h5>
-                                <p>Tips: </p>
                             </div><!-- panel-heading -->
                             <div class="panel-body nopadding">
                                 <textarea  rows="4" id="code" name="code" >
-print "hello"
+list1 = ['SuperMan', 'BatMan', 'The Mask', 'SpiderMan'];
+
+#Print entire list
+print "Isi list adalah: \n", list1
+
+#Reverse the list
+list1.reverse()
+
+#Print entire list
+print "\nUrutkan list dari belakang ke depan: \n", list1
+
+#Print the index of an object within the list
+print "\nObjek 'The Mask' berada di indeks ke: ", list1.index('The Mask')
+
+#Remove object from the list
+list1.remove('SpiderMan')
+
+#Print entire list
+print "\nSetelah hapus SpiderMan: \n", list1
 </textarea>   
                             </div><!-- panel-body -->
                         </div><!-- panel -->
-						
-						<div class="panel panel-default">
+                        
+                        <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h5 class="panel-title">Output</h5>
+                                <p>Tips</p>
                             </div><!-- panel-heading -->
                             <div class="panel-body nopadding">
                                 <textarea  rows="4" id="code22" name="code22" >
-hello
+Isi list adalah: 
+['SuperMan', 'BatMan', 'The Mask', 'SpiderMan']
+
+Urutkan list dari belakang ke depan: 
+['SpiderMan', 'The Mask', 'BatMan', 'SuperMan']
+
+Objek 'The Mask' berada di indeks ke:  1
+
+Setelah hapus SpiderMan: 
+['The Mask', 'BatMan', 'SuperMan']
+
 </textarea>   
                             </div><!-- panel-body -->
                         </div><!-- panel -->
-                        
-                        
         
         
                     
@@ -201,6 +225,7 @@ hello
         indentUnit: 4,
         matchBrackets: true,
 		readOnly : true
+		
       });
             
             CodeMirror.fromTextArea(document.getElementById("code2"), {
